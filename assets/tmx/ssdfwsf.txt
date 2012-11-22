@@ -1,0 +1,28 @@
+// you can also use imports, for example:
+// import java.math.*;
+class Solution {
+  public int heavy_decimal_count ( int A,int B ) {
+    int heavies = 0;
+    int test,count,digit;
+    double total,avg;
+    for (int i = A; i <= B; i++) {
+        test = i;
+        total = 0;
+        count = 0;
+        while(test > 0) {
+            digit = test%10;
+            total += digit;
+            count++;
+            
+            test /= 10;
+        }
+
+        avg = total/(double)count;
+        if (avg > 7.0) {
+            heavies++;
+        }
+    }
+        
+    return heavies;
+  }
+}
